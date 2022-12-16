@@ -1,4 +1,4 @@
-// Multilevel menu
+/* Multilevel menu */
 .sidebar-dropdown .sidebar-dropdown .sidebar-link {
     padding: .625rem 1.5rem .625rem 4.5rem;
 }
@@ -45,7 +45,6 @@
     background: transparent
 }
 
-// Sidebar
 .sidebar [data-bs-toggle=collapse] {
     position: relative;
 }
