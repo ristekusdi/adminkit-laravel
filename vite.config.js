@@ -15,6 +15,7 @@ export default defineConfig({
             '~jsvectormap': path.resolve(__dirname, 'node_modules/jsvectormap'),
             '~simplebar': path.resolve(__dirname, 'node_modules/simplebar'),
             '~flatpickr': path.resolve(__dirname, 'node_modules/flatpickr'),
+            '~notyf': path.resolve(__dirname, 'node_modules/notyf'),
         }
     }
 });
