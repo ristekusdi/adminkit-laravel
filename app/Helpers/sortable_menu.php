@@ -58,8 +58,13 @@ if (! function_exists('build_sortable_menu')) {
 
         foreach ($items as $item) {
             $menu .= '<li class="list-group-item" data-id="'.$item['id'].'">
-                    '.$item['text'].'
-                    '.(isset($item['children']) ? build_sortable_menu($item['children'], $is_nested = true, $id = $item['text']) : '').'
+                        '.$item['text'].'
+                        <div class="float-end mb-4">
+                            <a href="'.route('menus.edit', $item['id']).'" class="btn btn-primary">Edit</a>
+                            <button type="button" data-id="'.$item['id'].'" data-text="'.$item['text'].'" class="delete-menu btn btn-danger">Hapus</button>
+                        </div>
+                        <div class="clearfix"></div>
+                        '.(isset($item['children']) ? build_sortable_menu($item['children'], $is_nested = true, $id = $item['text']) : '').'
                 </li>';
         }
         $menu .= '</ul>';
