@@ -3,6 +3,9 @@
 use App\Http\Controllers\MenuController;
 use App\Http\Livewire\Menu\Create as MenuCreate;
 use App\Http\Livewire\Menu\Edit as MenuEdit;
+
+use App\Http\Livewire\RBAC\Users\Index as RBACUsersIndex;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,5 +29,7 @@ Route::middleware(['imissu-web'])->group(function () {
     Route::post('/menus/refresh', [MenuController::class, 'refresh'])->name('menus.refresh');
     Route::post('/menus/delete', [MenuController::class, 'delete'])->name('menus.delete');
     Route::get('/menus/create', MenuCreate::class)->name('menus.create');
-    Route::get('/menus/{id}/edit', MenuEdit::class)->name('menus.edit');    
+    Route::get('/menus/{id}/edit', MenuEdit::class)->name('menus.edit');
+    
+    Route::get('/rbac/users', RBACUsersIndex::class)->name('rbac.users.index');
 });
