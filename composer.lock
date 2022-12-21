@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c3b9ab0c63e0d62cdd446b7ee9a8f5ec",
+    "content-hash": "626d7d8b2a17b157b073db6aaba3e769",
     "packages": [
         {
             "name": "brick/math",
@@ -2906,6 +2906,49 @@
                 }
             ],
             "time": "2022-11-05T23:03:38+00:00"
+        },
+        {
+            "name": "ristekusdi/rbac-connector",
+            "version": "v2.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ristekusdi/rbac-connector.git",
+                "reference": "e31b7514655b3a6533d8b94c79d06d3dada6d0b3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ristekusdi/rbac-connector/zipball/e31b7514655b3a6533d8b94c79d06d3dada6d0b3",
+                "reference": "e31b7514655b3a6533d8b94c79d06d3dada6d0b3",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2.5|^8.0.2"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "helpers.php"
+                ],
+                "psr-4": {
+                    "RistekUSDI\\RBAC\\Connector\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Riset dan Teknologi USDI",
+                    "email": "usdi@unud.ac.id"
+                }
+            ],
+            "description": "IMISSU2 RBAC Connector",
+            "support": {
+                "issues": "https://github.com/ristekusdi/rbac-connector/issues",
+                "source": "https://github.com/ristekusdi/rbac-connector/tree/v2.0.5"
+            },
+            "time": "2022-11-28T05:19:30+00:00"
         },
         {
             "name": "ristekusdi/sso-laravel",
