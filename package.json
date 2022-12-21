@@ -19,6 +19,9 @@
         "feather-icons": "^4.29.0",
         "flatpickr": "^4.6.13",
         "jsvectormap": "^1.5.1",
-        "simplebar": "^5.3.9"
+        "nested-sort": "^5.1.0",
+        "notyf": "^3.10.0",
+        "simplebar": "^5.3.9",
+        "sweetalert": "^2.1.2"
     }
 }
