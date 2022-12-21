@@ -122,7 +122,7 @@ if (! function_exists('is_active_link_from_children')) {
         $result = false;
         $links = array();
         array_walk_recursive($items, function ($value, $key) use (&$links) {
-            if ($key == 'link') {
+            if ($key == 'path') {
                 $links[] = $value;
             }
         });
