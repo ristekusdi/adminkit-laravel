@@ -40,6 +40,11 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+        'imissu-web' => [
+            'driver' => 'imissu-web',
+            'provider' => 'imissu-web',
+        ],        
     ],
 
     /*
@@ -69,6 +74,11 @@ return [
         //     'driver' => 'database',
         //     'table' => 'users',
         // ],
+
+        'imissu-web' => [
+            'driver' => 'imissu-web',
+            'model' => App\Models\SSO\Web\User::class,
+        ],
     ],
 
     /*

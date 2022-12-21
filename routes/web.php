@@ -16,11 +16,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('blank');
+require __DIR__.'/sso-web.php';
+
+Route::middleware(['imissu-web'])->group(function () {
+    Route::get('/', function () {
+        return view('blank');
+    });
+    Route::get('/menus', [MenuController::class, 'index'])->name('menus.index');
+    Route::post('/menus/refresh', [MenuController::class, 'refresh'])->name('menus.refresh');
+    Route::post('/menus/delete', [MenuController::class, 'delete'])->name('menus.delete');
+    Route::get('/menus/create', MenuCreate::class)->name('menus.create');
+    Route::get('/menus/{id}/edit', MenuEdit::class)->name('menus.edit');    
 });
-Route::get('/menus', [MenuController::class, 'index'])->name('menus.index');
-Route::post('/menus/refresh', [MenuController::class, 'refresh'])->name('menus.refresh');
-Route::post('/menus/delete', [MenuController::class, 'delete'])->name('menus.delete');
-Route::get('/menus/create', MenuCreate::class)->name('menus.create');
-Route::get('/menus/{id}/edit', MenuEdit::class)->name('menus.edit');
