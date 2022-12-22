@@ -51,12 +51,7 @@ class Index extends Component
                 'search' => $this->search,
                 // key "q" is optional
                 'q' => $this->q
-            ))),
-            'total_users' => (new Connector)->totalUsers(array(
-                'search' => $this->search,
-                // key "q" is optional
-                'q' => $this->q
-            ))
+            )))
         ]);
     }
 }

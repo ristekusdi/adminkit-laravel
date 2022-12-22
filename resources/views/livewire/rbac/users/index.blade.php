@@ -46,7 +46,7 @@
                     <button type="submit" class="btn btn-primary" wire:click="refreshUsersTable">Perbaharui data</button>
                 </div>
             </div>
-            <div wire:loading.flex wire:target="refreshUsersTable, q, search" class="justify-content-center">
+            <div wire:loading.flex wire:target="refreshUsersTable, q, search, perPage" class="justify-content-center">
                 <p>Memuat ulang data pengguna</p>
             </div>
             <div class="table-responsive">
@@ -69,7 +69,7 @@
                     </tbody>
                 </table>
             </div>
-            <div>
+            <div class="d-flex justify-content-end">
                 @include('includes._simple_pagination', ['items' => $users->toArray()])
             </div>
         </div>
