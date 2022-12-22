@@ -19,8 +19,12 @@ return new class extends Migration
             $table->string('path');
             $table->unsignedInteger('parent');
             $table->unsignedInteger('order')->nullable();
-            $table->timestamps();
-            $table->softDeletes();
+            $table->unsignedBigInteger('created_by')->nullable(); // unud_sso_id
+            $table->timestamp('created_at')->nullable();
+            $table->unsignedBigInteger('updated_by')->nullable(); // unud_sso_id
+            $table->timestamp('updated_at')->nullable();
+            $table->unsignedBigInteger('deleted_by')->nullable(); // unud_sso_id
+            $table->timestamp('deleted_at')->nullable();
         });
     }
 
