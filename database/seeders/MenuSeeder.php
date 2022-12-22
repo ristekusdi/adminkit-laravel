@@ -18,36 +18,49 @@ class MenuSeeder extends Seeder
         DB::table('menus')->insert([
             [
                 'id' => 1,
+                'text' => 'Menus',
+                'path' => 'menus',
+                'icon' => 'menu',
+                'parent' => '0',
+                'order' => '0'  
+            ],
+            [
+                'id' => 2,
                 'text' => 'RBAC',
                 'path' => '#',
+                'icon' => null,
                 'parent' => '0',
                 'order' => '0'
             ],
             [
-                'id' => 2,
+                'id' => 3,
                 'text' => 'Users',
                 'path' => 'rbac/users',
-                'parent' => '1',
-                'order' => '0'
-            ],
-            [
-                'id' => 3,
-                'text' => 'Roles',
-                'path' => 'rbac/roles',
-                'parent' => '1',
+                'icon' => null,
+                'parent' => '2',
                 'order' => '0'
             ],
             [
                 'id' => 4,
-                'text' => 'Permissions',
-                'path' => 'rbac/permissions',
-                'parent' => '1',
+                'text' => 'Roles',
+                'path' => 'rbac/roles',
+                'icon' => null,
+                'parent' => '2',
                 'order' => '0'
             ],
             [
                 'id' => 5,
+                'text' => 'Permissions',
+                'path' => 'rbac/permissions',
+                'icon' => null,
+                'parent' => '2',
+                'order' => '0'
+            ],
+            [
+                'id' => 6,
                 'text' => 'Login as',
                 'path' => 'loginas',
+                'icon' => null,
                 'parent' => '0',
                 'order' => '0'
             ],
