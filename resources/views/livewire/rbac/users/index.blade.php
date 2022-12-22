@@ -16,7 +16,7 @@
         <h1 class="h3 d-inline align-middle">RBAC Users</h1>
         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ route('menus.index') }}">RBAC Users</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('rbac.users.index') }}">RBAC Users</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Index</li>
             </ol>
         </nav>
