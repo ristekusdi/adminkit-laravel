@@ -104,6 +104,9 @@
 
 <x-app-layout>
     <h1 class="h3 mb-4">Menus</h1>
+    <div class="d-flex justify-content-end mb-4">
+        <a href="{{ route('menus.create') }}" class="btn btn-primary">Buat menu</a>
+    </div>
     {!! load_sortable_menu() !!}
     <input type="hidden" name="url_refresh_sortable_menu" value="{{ route('menus.refresh') }}">
     <input type="hidden" name="url_delete_menu" value="{{ route('menus.delete') }}">
