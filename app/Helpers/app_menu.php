@@ -107,7 +107,7 @@ if (! function_exists('set_sidebar_item_class')) {
                 return 'class="sidebar-item"';
             }
         } else {
-            if ($item['path'] == request()->path()) {
+            if (strpos(request()->path(), $item['path']) !== false) {
                 return 'class="sidebar-item active"';
             } else {
                 return 'class="sidebar-item"';
@@ -126,9 +126,11 @@ if (! function_exists('is_active_link_from_children')) {
                 $links[] = $value;
             }
         });
-        
-        if (in_array(request()->path(), $links)) {
-            $result = true;
+
+        foreach ($links as $link) {
+            if (strpos(request()->path(), $link) !== false) {
+                $result = true;
+            }
         }
 
         return $result;
