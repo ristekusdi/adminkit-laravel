@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('text');
             $table->string('path');
+            $table->string('icon')->nullable();
             $table->unsignedInteger('parent');
             $table->unsignedInteger('order')->nullable();
             $table->unsignedBigInteger('created_by')->nullable(); // unud_sso_id
