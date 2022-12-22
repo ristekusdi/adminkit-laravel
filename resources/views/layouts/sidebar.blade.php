@@ -19,16 +19,6 @@
                 </a>
             </li>
 
-            @if (is_active_path('menus'))
-                <li class="sidebar-item active">
-            @else
-                <li class="sidebar-item">
-            @endif
-                <a class="sidebar-link" href="/menus">
-                    <i class="align-middle" data-feather="menu"></i> <span class="align-middle">Menus</span>
-                </a>
-            </li>
-
             {!! load_app_menu() !!}
         </ul>
     </div>
