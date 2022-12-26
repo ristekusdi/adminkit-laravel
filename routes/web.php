@@ -10,6 +10,10 @@ use App\Http\Livewire\RBAC\Roles\Index as RBACRolesIndex;
 use App\Http\Livewire\RBAC\Roles\Create as RBACRolesCreate;
 use App\Http\Livewire\RBAC\Roles\Edit as RBACRolesEdit;
 
+use App\Http\Livewire\RBAC\Permissions\Index as RBACPermissionsIndex;
+use App\Http\Livewire\RBAC\Permissions\Create as RBACPermissionsCreate;
+use App\Http\Livewire\RBAC\Permissions\Edit as RBACPermissionsEdit;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,4 +44,8 @@ Route::middleware(['imissu-web'])->group(function () {
     Route::get('/rbac/roles', RBACRolesIndex::class)->name('rbac.roles.index');
     Route::get('/rbac/roles/create', RBACRolesCreate::class)->name('rbac.roles.create');
     Route::get('/rbac/roles/{role}/edit', RBACRolesEdit::class)->name('rbac.roles.edit');
+
+    Route::get('/rbac/permissions', RBACPermissionsIndex::class)->name('rbac.permissions.index');
+    Route::get('/rbac/permissions/create', RBACPermissionsCreate::class)->name('rbac.permissions.create');
+    Route::get('/rbac/permissions/{permission}/edit', RBACPermissionsEdit::class)->name('rbac.permissions.edit');
 });

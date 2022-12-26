@@ -17,7 +17,7 @@
         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('rbac.roles.index') }}">RBAC Roles</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Create</li>
+                <li class="breadcrumb-item active" aria-current="page">Edit</li>
             </ol>
         </nav>
     </div>
@@ -29,6 +29,24 @@
                     <label for="text" class="form-label">Name</label>
                     <input id="text" type="text" class="form-control @error('role.name') border-danger @enderror" placeholder="Name" wire:model="role.name">
                     @error('role.name') <span class="text-danger">{{ $message }}</span> @enderror
+                </div>
+                <div class="mb-4">
+                    @foreach ($group_permissions as $key => $permissions)
+                    <div class="my-3">
+                        <div class="form-check">
+                            <input id="{{ $key }}" class="form-check-input" type="checkbox" value="{{ $key }}" wire:model="selectedGroupPermissions.{{ $key }}">
+                            <label for="{{ $key }}" class="form-check-label fw-bold">{{ $key }}</label>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-wrap gap-2">
+                        @foreach ($permissions as $perm)
+                        <div class="form-check">
+                            <input id="{{ $perm['id'] }}-{{ $perm['name'] }}" class="form-check-input" type="checkbox" wire:model="permissions" value="{{ $perm['id'] }}">
+                            <label for="{{ $perm['id'] }}-{{ $perm['name'] }}" class="form-check-label">{{ $perm['name'] }}</label>
+                        </div>
+                        @endforeach
+                    </div>
+                    @endforeach
                 </div>
                 <div class="mb-4">
                     <button type="submit" class="btn btn-primary">Simpan</button>
