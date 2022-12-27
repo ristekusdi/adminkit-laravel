@@ -2909,16 +2909,16 @@
         },
         {
             "name": "ristekusdi/rbac-connector",
-            "version": "v2.0.5",
+            "version": "v2.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ristekusdi/rbac-connector.git",
-                "reference": "e31b7514655b3a6533d8b94c79d06d3dada6d0b3"
+                "reference": "6bd36a5c20045a75f515970cda63993020ed0ab3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ristekusdi/rbac-connector/zipball/e31b7514655b3a6533d8b94c79d06d3dada6d0b3",
-                "reference": "e31b7514655b3a6533d8b94c79d06d3dada6d0b3",
+                "url": "https://api.github.com/repos/ristekusdi/rbac-connector/zipball/6bd36a5c20045a75f515970cda63993020ed0ab3",
+                "reference": "6bd36a5c20045a75f515970cda63993020ed0ab3",
                 "shasum": ""
             },
             "require": {
@@ -2946,9 +2946,9 @@
             "description": "IMISSU2 RBAC Connector",
             "support": {
                 "issues": "https://github.com/ristekusdi/rbac-connector/issues",
-                "source": "https://github.com/ristekusdi/rbac-connector/tree/v2.0.5"
+                "source": "https://github.com/ristekusdi/rbac-connector/tree/v2.0.6"
             },
-            "time": "2022-11-28T05:19:30+00:00"
+            "time": "2022-12-27T07:36:04+00:00"
         },
         {
             "name": "ristekusdi/sso-laravel",
