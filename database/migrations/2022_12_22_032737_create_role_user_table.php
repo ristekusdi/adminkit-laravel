@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('role_user', function (Blueprint $table) {
             $table->unsignedInteger('role_id');
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id')->nullable(); // for external user
+            $table->unsignedBigInteger('sso_id')->nullable(); // for Udayana user
 
             // Index
             $table->index('role_id');
