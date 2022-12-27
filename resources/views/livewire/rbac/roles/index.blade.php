@@ -1,5 +1,5 @@
 @push('scripts')
-<script>
+<script type="module">
     window.addEventListener('swal:confirm', (e) => {
         swal({
             title: e.detail.title,

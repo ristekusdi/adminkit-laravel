@@ -1,5 +1,5 @@
 @push('scripts')
-<script>
+<script type="module">
     window.addEventListener('notyf:ok', (e) => {
         const notyf = new Notyf();
         notyf.success(e.detail.message);

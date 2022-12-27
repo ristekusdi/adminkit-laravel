@@ -5,6 +5,7 @@ use App\Http\Livewire\Menu\Create as MenuCreate;
 use App\Http\Livewire\Menu\Edit as MenuEdit;
 
 use App\Http\Livewire\RBAC\Users\Index as RBACUsersIndex;
+use App\Http\Livewire\RBAC\Users\Assign as RBACUsersAssign;
 
 use App\Http\Livewire\RBAC\Roles\Index as RBACRolesIndex;
 use App\Http\Livewire\RBAC\Roles\Create as RBACRolesCreate;
@@ -40,6 +41,7 @@ Route::middleware(['imissu-web'])->group(function () {
     Route::get('/menus/{id}/edit', MenuEdit::class)->name('menus.edit');
     
     Route::get('/rbac/users', RBACUsersIndex::class)->name('rbac.users.index');
+    Route::get('/rbac/users/{username}/assign', RBACUsersAssign::class)->name('rbac.users.assign');
 
     Route::get('/rbac/roles', RBACRolesIndex::class)->name('rbac.roles.index');
     Route::get('/rbac/roles/create', RBACRolesCreate::class)->name('rbac.roles.create');

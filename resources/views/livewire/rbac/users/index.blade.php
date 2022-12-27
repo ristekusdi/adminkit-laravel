@@ -1,5 +1,5 @@
 @push('scripts')
-<script>
+<script type="module">
     window.addEventListener('notyf:ok', (e) => {
         const notyf = new Notyf();
         notyf.success(e.detail.message);
@@ -56,6 +56,7 @@
                             <th scope="col">NIP/NIM</th>
                             <th scope="col">Nama</th>
                             <th scope="col">Username</th>
+                            <th scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -64,6 +65,13 @@
                             <td>{{ $user['firstName'] }}</td>
                             <td>{{ $user['lastName'] }}</td>
                             <td>{{ $user['username'] }}</td>
+                            <td>
+                                <a href="{{ route('rbac.users.assign', $user['username']) }}" class="btn btn-primary">
+                                    <div wire:ignore>
+                                        <i class="align-middle" data-feather="settings"></i>
+                                    </div>
+                                </a>
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>
