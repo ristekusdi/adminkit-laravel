@@ -18,3 +18,5 @@ Run command below.
 ```
 composer create-project ristekusdi/adminkit-laravel example-app
 ```
+
+Further documentation soon.
