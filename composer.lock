@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "626d7d8b2a17b157b073db6aaba3e769",
+    "content-hash": "d4332b18604e805dcb8e902245f3d525",
     "packages": [
         {
             "name": "brick/math",
@@ -2952,16 +2952,16 @@
         },
         {
             "name": "ristekusdi/sso-laravel",
-            "version": "v1.1.1",
+            "version": "v1.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ristekusdi/sso-laravel.git",
-                "reference": "5f005b6b4f193d568fbff61746424c25bd5fabe9"
+                "reference": "56f6014230b8b4fa7ee92ada28a180e9fa52ef7d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ristekusdi/sso-laravel/zipball/5f005b6b4f193d568fbff61746424c25bd5fabe9",
-                "reference": "5f005b6b4f193d568fbff61746424c25bd5fabe9",
+                "url": "https://api.github.com/repos/ristekusdi/sso-laravel/zipball/56f6014230b8b4fa7ee92ada28a180e9fa52ef7d",
+                "reference": "56f6014230b8b4fa7ee92ada28a180e9fa52ef7d",
                 "shasum": ""
             },
             "require": {
@@ -3005,9 +3005,9 @@
             ],
             "support": {
                 "issues": "https://github.com/ristekusdi/sso-laravel/issues",
-                "source": "https://github.com/ristekusdi/sso-laravel/tree/v1.1.1"
+                "source": "https://github.com/ristekusdi/sso-laravel/tree/v1.1.3"
             },
-            "time": "2022-11-29T06:03:44+00:00"
+            "time": "2022-12-28T07:19:49+00:00"
         },
         {
             "name": "symfony/console",
