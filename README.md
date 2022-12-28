@@ -15,8 +15,10 @@ Build with [AdminKit](https://adminkit.io/) in Laravel + integrate with [Single 
 
 Run command below.
 
+> For non-production ready please add flag `--stability=dev` as below.
+
 ```
-composer create-project ristekusdi/adminkit-laravel example-app
+composer create-project --stability=dev ristekusdi/adminkit-laravel example-app
 ```
 
 Further documentation soon.
