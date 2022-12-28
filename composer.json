@@ -1,9 +1,15 @@
 {
-    "name": "laravel/laravel",
+    "name": "ristekusdi/adminkit-laravel",
     "type": "project",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "description": "Starter kit to accelerate develop internal web app in Universitas Udayana",
+    "keywords": ["starter kit", "laravel"],
     "license": "MIT",
+    "authors": [
+        {
+            "name": "Riset dan Teknologi USDI",
+            "email": "usdi@unud.ac.id"
+        }
+    ],
     "require": {
         "php": "^8.0.2",
         "guzzlehttp/guzzle": "^7.2",
