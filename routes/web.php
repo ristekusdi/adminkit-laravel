@@ -29,6 +29,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 require __DIR__.'/sso-web.php';
+require __DIR__.'/web-session.php';
 
 Route::middleware(['imissu-web'])->group(function () {
     Route::get('/', function () {

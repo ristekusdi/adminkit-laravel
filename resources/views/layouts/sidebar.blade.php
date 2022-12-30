@@ -4,6 +4,19 @@
             <span class="align-middle">{{ config('app.name', 'Laravel') }}</span>
         </a>
 
+        <div class="sidebar-header">
+            <form class="mt-1">
+                <label for="roles" class="form-label">Peran</label>
+                <select id="roles" onchange="changeRoleActive(this);" class="form-select" placeholder="Masukkan peran">
+                    @foreach (auth('imissu-web')->user()->roles() as $role)
+                        <option value="{{ $role['name'] }}"
+                        {{ (auth('imissu-web')->user()->role_active['name'] === $role['name']) ? 'selected' : '' }}>{{ $role['name'] }}</option>
+                    @endforeach
+                </select>
+                <input type="hidden" name="url_change_role_active" value="{{ url('/web-session/change-role-active') }}">
+            </form>
+        </div>
+
         <ul class="sidebar-nav">
             <li class="sidebar-header">
                 Pages
@@ -19,7 +32,7 @@
                 </a>
             </li>
 
-            {!! load_app_menu() !!}
+            {!! load_app_menu(auth('imissu-web')->user()->role_active['name']) !!}
         </ul>
     </div>
 </nav>

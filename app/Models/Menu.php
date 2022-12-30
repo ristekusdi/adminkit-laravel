@@ -11,4 +11,12 @@ class Menu extends Model
     use HasFactory, SoftDeletes;
 
     protected $guarded = [];
+
+    public function scopeWithPermission($query)
+    {
+        return $query->select('menus.id', 'menus.text', 'menus.path', 'menus.icon',
+        'menus.parent', 'menus.order', 'permissions.name')
+        ->join('permissions', 'permissions.menu_id', '=', 'menus.id', 'left')
+        ->groupBy('menus.id');
+    }
 }

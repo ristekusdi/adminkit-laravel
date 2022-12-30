@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\SSO\Web;
 
+use App\Facades\WebSession;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use RistekUSDI\SSO\Laravel\Facades\IMISSUWeb;
@@ -28,6 +29,8 @@ class AuthController extends Controller
      */
     public function logout()
     {
+        WebSession::forgetSession();
+        
         $url = IMISSUWeb::getLogoutUrl();
         return redirect($url);
     }

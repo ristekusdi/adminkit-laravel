@@ -195,6 +195,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        // WebSession
+        App\Providers\WebSessionProvider::class,
     ],
 
     /*
@@ -210,6 +212,9 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
+
+        // WebSession
+        'WebSession' => App\Facades\WebSession::class,
     ])->toArray(),
 
 ];
