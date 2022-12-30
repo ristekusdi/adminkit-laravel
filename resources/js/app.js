@@ -15,8 +15,3 @@ window.Notyf = Notyf;
 // Sweetalert
 import swal from 'sweetalert';
 window.swal = swal;
-
-// Tom Select
-import TomSelect from "tom-select";
-import '~tom-select/dist/css/tom-select.bootstrap5.min.css';
-window.TomSelect = TomSelect;

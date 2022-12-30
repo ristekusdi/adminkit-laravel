@@ -16,7 +16,6 @@ export default defineConfig({
             '~simplebar': path.resolve(__dirname, 'node_modules/simplebar'),
             '~flatpickr': path.resolve(__dirname, 'node_modules/flatpickr'),
             '~notyf': path.resolve(__dirname, 'node_modules/notyf'),
-            '~tom-select': path.resolve(__dirname, 'node_modules/tom-select'),
         }
     }
 });

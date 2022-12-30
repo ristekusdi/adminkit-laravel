@@ -22,7 +22,6 @@
         "nested-sort": "^5.1.0",
         "notyf": "^3.10.0",
         "simplebar": "^5.3.9",
-        "sweetalert": "^2.1.2",
-        "tom-select": "^2.2.2"
+        "sweetalert": "^2.1.2"
     }
 }
