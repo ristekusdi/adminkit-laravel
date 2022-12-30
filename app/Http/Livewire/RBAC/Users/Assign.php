@@ -36,22 +36,21 @@ class Assign extends Component
     public function clearForm()
     {
         // TODO: reset field selectedRoles
+        $this->selectedRoles = [];
     }
 
     public function render()
     {
-        $roles = collect(Role::get())->pluck('name')->toArray();
-        $client_roles = (new Connector)->getClientRoles(config('sso.client_id'), $roles);
+        $client_roles = (new Connector)->getClientRoles(config('sso.client_id'), collect(Role::get())->pluck('name')->toArray());
         return view('livewire.rbac.users.assign', [
-            'roles' => $client_roles
+            'client_roles' => $client_roles
         ]);
     }
 
     public function submit()
     {
         DB::table('role_user')->where('sso_id', '=', $this->unud_sso_id)->delete();
-
-        // $this->validate();
+        
         $roles = collect(Role::get())->toArray();
         foreach ($roles as $role) {
             if (in_array($role['name'], $this->selectedRoles)) {
