@@ -53,7 +53,7 @@
                     })
                     .then(response => response.json())
                     .then(data => {
-                        alert(data.message);
+                        swal(data.message);
                         window.location.reload();
                     });
             }
