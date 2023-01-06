@@ -35,6 +35,30 @@
     </div>
     @livewireScripts
     @stack('scripts')
+    <script>
+        function changeRoleActive(e) {
+            const value = e.value;
+            const url = document.querySelector('input[name="url_change_role_active"]').value;
+            const token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+            if (value != '0') {
+                fetch(url, {
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded',
+                            'Accept': 'application/json',
+                            'X-CSRF-TOKEN': token
+                        },
+                        method: 'POST',
+                        credentials: 'same-origin',
+                        body: `role_active=${value}`
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        alert(data.message);
+                        window.location.reload();
+                    });
+            }
+        }
+    </script>
 </body>
 
 </html>
