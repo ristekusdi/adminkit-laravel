@@ -34,8 +34,8 @@ class MenuSeeder extends Seeder
             ],
             [
                 'id' => 3,
-                'text' => 'Users',
-                'path' => 'rbac/users',
+                'text' => 'Permissions',
+                'path' => 'rbac/permissions',
                 'icon' => null,
                 'parent' => '2',
                 'order' => '0'
@@ -50,8 +50,8 @@ class MenuSeeder extends Seeder
             ],
             [
                 'id' => 5,
-                'text' => 'Permissions',
-                'path' => 'rbac/permissions',
+                'text' => 'Users',
+                'path' => 'rbac/users',
                 'icon' => null,
                 'parent' => '2',
                 'order' => '0'
