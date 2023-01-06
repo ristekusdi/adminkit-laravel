@@ -20,6 +20,27 @@ class Edit extends Component
     public function mount(Role $role)
     {
         $this->role = $role;
+        $this->permissions = $role->permissions()->pluck('id')->toArray();
+        $group_permissions = Permission::getGroupPermissions();
+        
+        $selectedGroupPermissions = [];
+        foreach ($group_permissions as $key => $group_perm) {
+            $perm_ids = array_column($group_perm, 'id');
+            $comparator = [];
+            foreach ($this->permissions as $perm_id) {
+                if (in_array($perm_id, $perm_ids)) {
+                    array_push($comparator, $perm_id);
+                }
+            }
+
+            if ($comparator === $perm_ids) {
+                array_push($selectedGroupPermissions, $key);
+            }
+        }
+        
+        foreach ($selectedGroupPermissions as $key => $value) {
+            $this->selectedGroupPermissions[$value] = $value;
+        }
     }
 
     public function render()
