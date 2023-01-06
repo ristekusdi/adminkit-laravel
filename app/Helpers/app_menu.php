@@ -60,16 +60,71 @@ if (! function_exists('build_app_menu')) {
             if (isset($item['header'])) {
                 $menu .= '<li class="sidebar-header">'.$item['header'].'</li>';
             } else {
-                $menu .= '<li '.set_sidebar_item_class($item, $is_nested).'>
-                    <a '.set_sidebar_link_class($item).' '.set_data_bs_attr($item).' '.set_href($item['path']).' '.set_aria_expanded($item).'>
-                        '.set_sidebar_link_text($item).'
-                    </a>
-                    '.(isset($item['children']) ? build_app_menu($item['children'], $is_nested = true, $id = $item['text']) : '').'
-                </li>';
+                if (is_part_of_root_menu($item['id'], $items)) {
+                    $menu .= '<li '.set_sidebar_item_class($item, $is_nested).'>
+                        <a '.set_sidebar_link_class($item).' '.set_data_bs_attr($item).' '.set_href($item['path']).' '.set_aria_expanded($item).'>
+                            '.set_sidebar_link_text($item).'
+                        </a>
+                        '.(isset($item['children']) ? build_app_menu($item['children'], $is_nested = true, $id = $item['text']) : '').'
+                    </li>';
+                }
             }
         }
         $menu .= '</ul>';
         return $menu;
+    }
+}
+
+if (! function_exists('is_part_of_root_menu')) {
+    function is_part_of_root_menu($menu_id, $menus)
+    {
+        $result = explode(',', substr(arr_child_of_root_menu($menu_id, $menus), 1));
+        if (in_array('y', $result)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
+if (! function_exists('arr_child_of_root_menu')) {
+    function arr_child_of_root_menu($menu_id = 0, $menus = [], $level = 1)
+    {
+        $flag = '';
+        foreach ($menus as $menu) {
+            if ($menu['id'] == $menu_id) {
+                if (isset($menu['children'])) {
+                    $perm_names = array_column_recursive($menu['children'], 'perm_name');
+                    if (auth('imissu-web')->user()->hasPermission($perm_names)) {
+                        $flag .= ',y';
+                    } else {
+                        $flag .= ',n';
+                    }
+                } else {
+                    if (auth('imissu-web')->user()->hasPermission($menu['perm_name'])) {
+                        $flag .= ',y';
+                    } else {
+                        $flag .= ',n';
+                    }
+                }
+            } else if ($menu['parent'] == $menu_id) {
+                if (isset($menu['children'])) {
+                    $perm_names = array_column_recursive($menu['children'], 'perm_name');
+                    if (auth('imissu-web')->user()->hasPermission($perm_names)) {
+                        $flag .= ',y';
+                    } else {
+                        $flag .= ',n';
+                    }
+                } else {
+                    if (auth('imissu-web')->user()->hasPermission($menu['perm_name'])) {
+                        $flag .= ',y';
+                    } else {
+                        $flag .= ',n';
+                    }
+                }
+            }
+        }
+        return $flag;
     }
 }
 
