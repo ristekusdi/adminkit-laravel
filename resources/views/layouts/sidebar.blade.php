@@ -32,7 +32,7 @@
                 </a>
             </li>
 
-            {!! load_app_menu(auth('imissu-web')->user()->role_active['name']) !!}
+            {!! load_app_menu() !!}
         </ul>
     </div>
 </nav>

@@ -3,7 +3,7 @@
 use App\Models\Menu;
 
 if (! function_exists('load_app_menu')) {
-    function load_app_menu($role_name = '')
+    function load_app_menu()
     {
         $arr_menus = Menu::withPermission()->get()->toArray();
 
