@@ -5,7 +5,7 @@ use App\Models\Menu;
 if (! function_exists('load_app_menu')) {
     function load_app_menu()
     {
-        $arr_menus = Menu::withPermission()->get()->toArray();
+        $arr_menus = Menu::withPermission()->orderBy('order')->get()->toArray();
 
         $menus = build_tree($arr_menus);
         update_level_items($menus);
