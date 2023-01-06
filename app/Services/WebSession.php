@@ -39,11 +39,7 @@ class WebSession
         
         $selected_permissions = [];
         foreach ($permissions as $perm) {
-            $item = [];
-            $item['id'] = $perm['id'];
-            $item['name'] = $perm['name'];
-
-            $selected_permissions[] = $item;
+            array_push($selected_permissions, $perm['name']);
         }
         
         return $selected_permissions;
