@@ -51,10 +51,41 @@
                         credentials: 'same-origin',
                         body: `role_active=${value}`
                     })
-                    .then(response => response.json())
+                    .then(response => {
+                        if (!response.ok) {
+                            switch (response.status) {
+                                case 401:
+                                    throw new Error("Sesi login Anda sudah habis! Silakan login kembali.");
+                                    break;
+                                case 403:
+                                    throw new Error("Tidak dapat mengubah peran aktif! Silakan login kembali.");
+                                default:
+                                    throw new Error("Terjadi kesalahan sistem! Silakan login kembali.");
+                                    break;
+                            }
+                        } else {
+                            return response.json();
+                        }
+                    })
                     .then(data => {
-                        swal(data.message);
-                        window.location.reload();
+                        swal({
+                            title: "",
+                            text: data.message,
+                            icon: "info"
+                        })
+                        .then(() => {
+                            window.location.reload();
+                        });
+                    })
+                    .catch(err => {
+                        swal({
+                            title: "",
+                            text: err.message,
+                            icon: "error"
+                        })
+                        .then(() => {
+                            window.location.reload();
+                        });
                     });
             }
         }
