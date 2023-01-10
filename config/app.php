@@ -197,6 +197,8 @@ return [
 
         // WebSession
         App\Providers\WebSessionProvider::class,
+        // RBAC
+        App\Providers\RBACProvider::class,
     ],
 
     /*
@@ -215,6 +217,8 @@ return [
 
         // WebSession
         'WebSession' => App\Facades\WebSession::class,
+        // RBAC
+        'RBAC' => App\Facades\RBAC::class,
     ])->toArray(),
 
 ];

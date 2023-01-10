@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\SSO\Web;
 
+use App\Facades\RBAC;
 use App\Facades\WebSession;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -67,6 +68,10 @@ class AuthController extends Controller
 
             try {
                 auth('imissu-web')->validate($token);
+                
+                // Sync user with RBAC
+                RBAC::sync(auth('imissu-web')->user()->getAttributes());
+
                 $url = config('sso.web.redirect_url', '/');
                 return redirect($url);
             } catch (\Exception $e) {
