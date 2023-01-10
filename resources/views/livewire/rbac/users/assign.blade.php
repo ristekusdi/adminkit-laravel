@@ -13,8 +13,6 @@
         const notyf = new Notyf();
         notyf.error(e.detail.message);
     });
-
-    // new TomSelect('#roles', {});
 </script>
 @endpush
 <div>
