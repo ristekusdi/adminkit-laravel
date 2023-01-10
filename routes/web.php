@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginAsController;
 use App\Http\Controllers\MenuController;
 use App\Http\Livewire\Menu\Create as MenuCreate;
 use App\Http\Livewire\Menu\Edit as MenuEdit;
@@ -52,4 +53,7 @@ Route::middleware(['imissu-web'])->group(function () {
     Route::get('/rbac/permissions', RBACPermissionsIndex::class)->name('rbac.permissions.index')->middleware('imissu-web.permission:rbac.permissions.edit');
     Route::get('/rbac/permissions/create', RBACPermissionsCreate::class)->name('rbac.permissions.create')->middleware('imissu-web.permission:rbac.permissions.create');
     Route::get('/rbac/permissions/{permission}/edit', RBACPermissionsEdit::class)->name('rbac.permissions.edit')->middleware('imissu-web.permission:rbac.permissions.edit');
+
+    Route::get('/loginas', [LoginAsController::class, 'index'])->name('loginas')->middleware('imissu-web.permission:loginas');
+    Route::post('/loginas', [LoginAsController::class, 'submit'])->name('loginas.submit')->middleware('imissu-web.permission:loginas');
 });
