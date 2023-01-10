@@ -38,8 +38,9 @@
     <script>
         function changeRoleActive(e) {
             const value = e.value;
-            const url = document.querySelector('input[name="url_change_role_active"]').value;
+            const url = document.querySelector('input[name="change_role_active_url"]').value;
             const token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+            const homeUrl = document.querySelector('input[name="home_url"]').value;
             if (value != '0') {
                 fetch(url, {
                         headers: {
@@ -74,7 +75,7 @@
                             icon: "info"
                         })
                         .then(() => {
-                            window.location.reload();
+                            window.location.href = homeUrl;
                         });
                     })
                     .catch(err => {

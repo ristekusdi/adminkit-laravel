@@ -13,7 +13,8 @@
                         {{ (auth('imissu-web')->user()->role_active['name'] === $role['name']) ? 'selected' : '' }}>{{ $role['name'] }}</option>
                     @endforeach
                 </select>
-                <input type="hidden" name="url_change_role_active" value="{{ url('/web-session/change-role-active') }}">
+                <input type="hidden" name="change_role_active_url" value="{{ url('/web-session/change-role-active') }}">
+                <input type="hidden" name="home_url" value="{{ url('/') }}">
             </form>
         </div>
 
