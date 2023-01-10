@@ -22,7 +22,7 @@ class MenuSeeder extends Seeder
                 'path' => 'menus',
                 'icon' => 'menu',
                 'parent' => '0',
-                'order' => '0'  
+                'order' => '1'  
             ],
             [
                 'id' => 2,
@@ -30,7 +30,7 @@ class MenuSeeder extends Seeder
                 'path' => '#',
                 'icon' => null,
                 'parent' => '0',
-                'order' => '0'
+                'order' => '2'
             ],
             [
                 'id' => 3,
@@ -38,7 +38,7 @@ class MenuSeeder extends Seeder
                 'path' => 'rbac/permissions',
                 'icon' => null,
                 'parent' => '2',
-                'order' => '0'
+                'order' => '1'
             ],
             [
                 'id' => 4,
@@ -46,7 +46,7 @@ class MenuSeeder extends Seeder
                 'path' => 'rbac/roles',
                 'icon' => null,
                 'parent' => '2',
-                'order' => '0'
+                'order' => '2'
             ],
             [
                 'id' => 5,
@@ -54,7 +54,7 @@ class MenuSeeder extends Seeder
                 'path' => 'rbac/users',
                 'icon' => null,
                 'parent' => '2',
-                'order' => '0'
+                'order' => '3'
             ],
             [
                 'id' => 6,
@@ -62,7 +62,7 @@ class MenuSeeder extends Seeder
                 'path' => 'loginas',
                 'icon' => null,
                 'parent' => '0',
-                'order' => '0'
+                'order' => '3'
             ],
         ]);
     }
